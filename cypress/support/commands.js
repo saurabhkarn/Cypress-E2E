@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('loginBasicAuth',()=>{
+    cy.visit("https://authenticationtest.com/HTTPAuth/",
+        { auth:{ 
+            username:'user',
+            password:'pass'
+            }
+        })
+        
+})

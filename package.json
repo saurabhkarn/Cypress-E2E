@@ -18,5 +18,8 @@
   "homepage": "https://github.com/saurabhkarn/Cypress-E2E#readme",
   "dependencies": {
     "cypress": "^13.6.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1"
   }
 }

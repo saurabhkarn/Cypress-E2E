@@ -33,3 +33,27 @@ Cypress.Commands.add('loginBasicAuth',()=>{
         })
         
 })
+
+Cypress.Commands.add("logIn",()=>{
+    cy.visit("https://naveenautomationlabs.com/opencart/index.php?route=account/login")
+    cy.get("#input-email").type("cypressdemo@dispostable.com")
+    cy.get("#input-password").type("Cypress123!!")
+    cy.get("input[type='submit']").click()
+})
+
+Cypress.Commands.add("logInParam",(email,password)=>{
+    cy.visit("https://naveenautomationlabs.com/opencart/index.php?route=account/login")
+    cy.get("#input-email").type(email)
+    cy.get("#input-password").type(password)
+    cy.get("input[type='submit']").click()
+})
+
+// import logInDetail from "C:\\Users\\saurabh\\Desktop\\Cypress-E2E\\cypress\\fixtures\\logIn.json"
+
+// Cypress.Commands.add("logInFixture",()=>{
+//     cy.visit("https://naveenautomationlabs.com/opencart/index.php?route=account/login")
+//     cy.get("#input-email").type(logInDetail.username)
+//     cy.get("#input-password").type(logInDetail.password)
+//     cy.get("input[type='submit']").click()
+// })
+

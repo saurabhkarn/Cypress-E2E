@@ -57,3 +57,39 @@ Cypress.Commands.add("logInParam",(email,password)=>{
 //     cy.get("input[type='submit']").click()
 // })
 
+Cypress.Commands.add("getAPI",(pathParam)=>{
+    cy.request({
+        method:"GET",
+        url:"/"+pathParam,
+        header:{Authorization:"Bearer fcac78894c9a2c269270ad75fbf2784b91e1c37fe1bb3373993796b6670bc78f"
+    }
+    })
+})
+Cypress.Commands.add("postAPI",(payload)=>{
+    cy.request({
+        method:"POST",
+        url:"/",
+        header:{Authorization:"Bearer fcac78894c9a2c269270ad75fbf2784b91e1c37fe1bb3373993796b6670bc78f"
+    },
+        body:payload
+    })
+})
+Cypress.Commands.add("putAPI",(pathParam,payload)=>{
+    cy.request({
+        method:"PUT",
+        url:"/"+pathParam,
+        header:{Authorization:"Bearer fcac78894c9a2c269270ad75fbf2784b91e1c37fe1bb3373993796b6670bc78f"
+    },
+        body:payload
+    })
+})
+Cypress.Commands.add("deleteAPI",(pathParam)=>{
+    cy.request({
+        method:"DELETE",
+        url:"/"+pathParam,
+        header:{Authorization:"Bearer fcac78894c9a2c269270ad75fbf2784b91e1c37fe1bb3373993796b6670bc78f"
+    }
+        
+    })
+    
+})
